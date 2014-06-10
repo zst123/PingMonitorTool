@@ -47,6 +47,9 @@ public class PingMonitorTool {
     static BufferedReader stdError;
 
 	public static void doPing(final String website) {
+		proc = null;
+		stdInput = null;
+		stdError = null;
 		new Thread(new Runnable()
 		{ @Override public void run() {
 			try {

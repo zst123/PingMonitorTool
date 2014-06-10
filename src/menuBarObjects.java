@@ -18,8 +18,11 @@ public class menuBarObjects {
 	static MenuItem quit;
 	
 	public static void setImage(String s, Color t){
-		trayIcon.setImage(textToImage.getImage(s,t));
+		if (trayIcon.getImage() != null) {
+			trayIcon.getImage().flush();
 		}
+		trayIcon.setImage(textToImage.getImage(s,t));
+	}
 	
 	public static void initTray(){
 	     popup = new PopupMenu();
